@@ -8,6 +8,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(pcl_ros REQUIRED)
 find_package(pcl_conversions REQUIRED)
 find_package(PCL REQUIRED)
@@ -18,6 +19,7 @@ add_executable(lidar_preprocess_node src/lidar_preprocess_node.cpp)
 ament_target_dependencies(lidar_preprocess_node
   rclcpp
   sensor_msgs
+  geometry_msgs
   pcl_ros
   pcl_conversions
 )
