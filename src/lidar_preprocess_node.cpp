@@ -7,7 +7,7 @@
 #include <pcl/filters/passthrough.h>
 #include <pcl/filters/statistical_outlier_removal.h>
 
-using PointT = pcl::PointXYZ;
+using PointT = pcl::PointXYZI;
 using PointCloud = pcl::PointCloud<PointT>;
 
 class LidarPreprocessNode : public rclcpp::Node {
