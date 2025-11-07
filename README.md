@@ -18,14 +18,22 @@ colcon build --packages-select lidar_preprocess
 ## 実行
 
 ```bash
-ros2 launch lidar_preprocess lidar_preprocess.launch.py
+ros2 launch lidar_preprocess lidar_preprocess.launch.xml
+```
+
+トピック名をカスタマイズする場合:
+```bash
+ros2 launch lidar_preprocess lidar_preprocess.launch.xml \
+  input_topic:=/your/input/topic \
+  output_topic:=/your/output/topic \
+  footprint_topic:=/your/footprint/topic
 ```
 
 ## トピック
 
-- 入力: `/lidar/points_raw` (sensor_msgs/PointCloud2)
-- 入力: `/footprint` (geometry_msgs/PolygonStamped) - フットプリントフィルタ用
-- 出力: `/lidar/points_filtered` (sensor_msgs/PointCloud2)
+- 入力: `input` (sensor_msgs/PointCloud2) - デフォルト: `/lidar/points_raw`
+- 入力: `footprint` (geometry_msgs/PolygonStamped) - デフォルト: `/footprint`
+- 出力: `output` (sensor_msgs/PointCloud2) - デフォルト: `/lidar/points_filtered`
 
 ## パラメータ
 
