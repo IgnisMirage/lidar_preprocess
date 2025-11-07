@@ -1,0 +1,13 @@
+<launch>
+  <arg name="input_topic" default="/lidar/points_raw" />
+  <arg name="output_topic" default="/lidar/points_filtered" />
+  <arg name="footprint_topic" default="/footprint" />
+  <arg name="config_file" default="$(find-pkg-share lidar_preprocess)/config/params.yaml" />
+
+  <node pkg="lidar_preprocess" exec="lidar_preprocess_node" name="lidar_preprocess_node">
+    <param from="$(var config_file)" />
+    <remap from="input" to="$(var input_topic)" />
+    <remap from="output" to="$(var output_topic)" />
+    <remap from="footprint" to="$(var footprint_topic)" />
+  </node>
+</launch>
