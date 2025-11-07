@@ -1,0 +1,18 @@
+lidar_preprocess_node:
+  ros__parameters:
+    # Height filter (z-axis)
+    height_min: -2.0
+    height_max: 5.0
+
+    # Footprint filter (remove points around vehicle)
+    footprint_x: 1.5
+    footprint_y: 1.0
+
+    # Noise filter (Statistical Outlier Removal)
+    sor_mean_k: 50
+    sor_stddev: 1.0
+
+    # Enable/disable filters
+    enable_noise_filter: true
+    enable_height_filter: true
+    enable_footprint_filter: true
